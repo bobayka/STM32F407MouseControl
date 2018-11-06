@@ -1,0 +1,143 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.24.2.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: N/A N/A, N/A, LIC=GE72Z-JJY2W-TJK6H-WKLH0-51IVU-LHP4P
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.24.1
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 5 (build 528)
+Assembler:       Armasm.exe V5.06 update 5 (build 528)
+Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
+Library Manager: ArmAr.exe V5.06 update 5 (build 528)
+Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
+CPU DLL:         SARMCM3.DLL V5.24.1
+Dialog DLL:      DCM.DLL V1.16.0.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
+Dialog DLL:      TCM.DLL V1.32.0.0
+ 
+<h2>Project:</h2>
+C:\Users\Denis\Desktop\STM 32\Wheelchair\Mouse conrol\STM32F407_mpu-6050_version_3 — êîïèÿ\STM32F407\Mpu_9250_MouseControl_STMF407\MDK-ARM\Mpu_9250_MouseControl_STMF407.uvprojx
+Project File Date:  10/21/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Mpu_9250_MouseControl_STMF407'
+compiling stm32f4xx_it.c...
+../Src/stm32f4xx_it.c(300): error:  #140: too many arguments in function call
+          accelAngle.rotate.x = get_X_Rotation(&finish.accelData);// Angles of the accel
+../Src/stm32f4xx_it.c(301): error:  #140: too many arguments in function call
+          accelAngle.rotate.y = get_Y_Rotation(&finish.accelData);
+../Src/stm32f4xx_it.c(302): error:  #140: too many arguments in function call
+          accelAngle.rotate.z = get_Z_Rotation(&finish.accelData);
+../Src/stm32f4xx_it.c(304): error:  #167: argument of type "KalmanFilter *" is incompatible with parameter of type "float *"
+          KalmanFilterSimple1D(accelAngle.rotate.x,&Kf_X, 10);//filtered value 
+../Src/stm32f4xx_it.c(304): error:  #167: argument of type "int" is incompatible with parameter of type "float *"
+          KalmanFilterSimple1D(accelAngle.rotate.x,&Kf_X, 10);//filtered value 
+../Src/stm32f4xx_it.c(304): error:  #165: too few arguments in function call
+          KalmanFilterSimple1D(accelAngle.rotate.x,&Kf_X, 10);//filtered value 
+../Src/stm32f4xx_it.c(305): error:  #167: argument of type "KalmanFilter *" is incompatible with parameter of type "float *"
+          KalmanFilterSimple1D(accelAngle.rotate.y,&Kf_Y, 10);
+../Src/stm32f4xx_it.c(305): error:  #167: argument of type "int" is incompatible with parameter of type "float *"
+          KalmanFilterSimple1D(accelAngle.rotate.y,&Kf_Y, 10);
+../Src/stm32f4xx_it.c(305): error:  #165: too few arguments in function call
+          KalmanFilterSimple1D(accelAngle.rotate.y,&Kf_Y, 10);
+../Src/stm32f4xx_it.c(306): error:  #167: argument of type "KalmanFilter *" is incompatible with parameter of type "float *"
+          KalmanFilterSimple1D(accelAngle.rotate.z,&Kf_Z, 10);
+../Src/stm32f4xx_it.c(306): error:  #167: argument of type "int" is incompatible with parameter of type "float *"
+          KalmanFilterSimple1D(accelAngle.rotate.z,&Kf_Z, 10);
+../Src/stm32f4xx_it.c(306): error:  #165: too few arguments in function call
+          KalmanFilterSimple1D(accelAngle.rotate.z,&Kf_Z, 10);
+../Src/stm32f4xx_it.c(314): error:  #20: identifier "gy" is undefined
+          gyro_Y_Angle=gy*dt+final_Y_Angle;
+../Src/stm32f4xx_it.c(252): warning:  #177-D: variable "offset_X_Angle"  was declared but never referenced
+    static float  offset_X_Angle, offset_Z_Angle;
+../Src/stm32f4xx_it.c(252): warning:  #177-D: variable "offset_Z_Angle"  was declared but never referenced
+    static float  offset_X_Angle, offset_Z_Angle;
+../Src/stm32f4xx_it.c(360): error:  #20: identifier "gy" is undefined
+      if ((gy<-sensLEFT || gy>sensRIGHT)&& final_X_Angle<9){
+../Src/stm32f4xx_it.c(418): error:  #20: identifier "mx" is undefined
+    if (mx>0)
+../Src/stm32f4xx_it.c(421): error:  #20: identifier "mx" is undefined
+     magnet_Z_Angle=f-atan2(mx,mz)*180/Pi;
+../Src/stm32f4xx_it.c(421): error:  #20: identifier "mz" is undefined
+     magnet_Z_Angle=f-atan2(mx,mz)*180/Pi;
+../Src/stm32f4xx_it.c(426): error:  #147-D: declaration is incompatible with "float get_X_Rotation(void)"  (declared at line 419 of "../Inc/MPU6050.h")
+  float get_X_Rotation(struct Accel* AccData){
+../Src/stm32f4xx_it.c(444): error:  #147-D: declaration is incompatible with "float get_Y_Rotation(void)"  (declared at line 420 of "../Inc/MPU6050.h")
+  float get_Y_Rotation(struct Accel* AccData){
+../Src/stm32f4xx_it.c(453): error:  #147-D: declaration is incompatible with "float get_Z_Rotation(void)"  (declared at line 421 of "../Inc/MPU6050.h")
+  float get_Z_Rotation(struct Accel* AccData){
+../Src/stm32f4xx_it.c(468): error:  #147-D: declaration is incompatible with "void KalmanFilterSimple1D(float, float *, float *, int)"  (declared at line 422 of "../Inc/MPU6050.h")
+  void KalmanFilterSimple1D(float data,KalmanFilter* kalman, int r){
+../Src/stm32f4xx_it.c(483): error:  #20: identifier "gx" is undefined
+      gyro_X_Angle=gx*dt+accel_X_Angle;
+../Src/stm32f4xx_it.c(485): error:  #20: identifier "gz" is undefined
+      gyro_Z_Angle=gz*dt+accel_Z_Angle;
+../Src/stm32f4xx_it.c(489): error:  #20: identifier "gx" is undefined
+      gyro_X_Angle=gx*dt+final_X_Angle;
+../Src/stm32f4xx_it.c(494): error:  #20: identifier "gz" is undefined
+      gyro_Z_Angle=gz*dt+final_Z_Angle;
+../Src/stm32f4xx_it.c(507): error:  #20: identifier "mx" is undefined
+    float values[3]={mx,my,mz};
+../Src/stm32f4xx_it.c(507): error:  #20: identifier "my" is undefined
+    float values[3]={mx,my,mz};
+../Src/stm32f4xx_it.c(507): error:  #20: identifier "mz" is undefined
+    float values[3]={mx,my,mz};
+../Src/stm32f4xx_it.c(339): warning:  #177-D: function "Reorientation"  was declared but never referenced
+  static void Reorientation( float* offset_X_Angle,float* offset_Z_Angle){
+../Src/stm32f4xx_it.c: 3 warnings, 28 errors
+compiling main.c...
+../Src/main.c(172): warning:  #223-D: function "_Error_Handler" declared implicitly
+      _Error_Handler(__FILE__, __LINE__);
+../Src/main.c(186): warning:  #223-D: function "_Error_Handler" declared implicitly
+      _Error_Handler(__FILE__, __LINE__);
+../Src/main.c(216): warning:  #223-D: function "_Error_Handler" declared implicitly
+      _Error_Handler(__FILE__, __LINE__);
+../Src/main.c(236): warning:  #223-D: function "_Error_Handler" declared implicitly
+      _Error_Handler(__FILE__, __LINE__);
+../Src/main.c(242): warning:  #223-D: function "_Error_Handler" declared implicitly
+      _Error_Handler(__FILE__, __LINE__);
+../Src/main.c(249): warning:  #223-D: function "_Error_Handler" declared implicitly
+      _Error_Handler(__FILE__, __LINE__);
+../Src/main.c(268): warning:  #223-D: function "_Error_Handler" declared implicitly
+      _Error_Handler(__FILE__, __LINE__);
+../Src/main.c(274): warning:  #223-D: function "_Error_Handler" declared implicitly
+      _Error_Handler(__FILE__, __LINE__);
+../Src/main.c(281): warning:  #223-D: function "_Error_Handler" declared implicitly
+      _Error_Handler(__FILE__, __LINE__);
+../Src/main.c(335): error:  #159: declaration is incompatible with previous "_Error_Handler"  (declared at line 172)
+  void _Error_Handler(char *file, int line)
+../Src/main.c: 9 warnings, 1 error
+"Mpu_9250_MouseControl_STMF407\Mpu_9250_MouseControl_STMF407.axf" - 29 Error(s), 12 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.3.0.pack
+                ARM.CMSIS.5.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.1.1
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.13.0.pack
+                Keil.STM32F4xx_DFP.2.13.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Mpu_9250_MouseControl_STMF407
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.1.1
+Target not created.
+Build Time Elapsed:  00:00:08
+</pre>
+</body>
+</html>
