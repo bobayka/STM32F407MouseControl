@@ -61,7 +61,6 @@ I2C_HandleTypeDef hi2c1;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
-
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 MPU6050_GYROResult    IntGyroData;

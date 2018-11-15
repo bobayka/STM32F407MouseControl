@@ -407,21 +407,13 @@ typedef struct{
 
 typedef struct{
   int8_t Data_Ready; 
-
 } MPU6050_StatusReg;
 
-typedef struct  {
-    
-		float state ,covariance;
-		
-}KalmanFilter;
 
-float get_X_Rotation(void);
-float get_Y_Rotation(void);
-float get_Z_Rotation(void);
-void KalmanFilterSimple1D(float data,float* state,float* covariance, int r); //r - ковариация шума измерений
-void Gyro_result(float* gyro_X_Angle,float* gyro_Y_Angle,float* gyro_Z_Angle);
-void Final(void);
+
+
+//void Gyro_result(float* gyro_X_Angle,float* gyro_Y_Angle,float* gyro_Z_Angle);
+
 
 HAL_StatusTypeDef I2C_BufferRead(uint8_t slaveAddr, uint8_t* pBuffer,
 		uint8_t readAddr, uint16_t NumByteToRead);

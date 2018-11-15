@@ -35,4 +35,4 @@ mpu_9250_mousecontrol_stmf407\magnitometer_calibration.o: ../Drivers/STM32F4xx_H
 mpu_9250_mousecontrol_stmf407\magnitometer_calibration.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
 mpu_9250_mousecontrol_stmf407\magnitometer_calibration.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 mpu_9250_mousecontrol_stmf407\magnitometer_calibration.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-mpu_9250_mousecontrol_stmf407\magnitometer_calibration.o: ..\Src\Magnitometer_Calibration.h
+mpu_9250_mousecontrol_stmf407\magnitometer_calibration.o: ../Inc/Magnitometer_Calibration.h

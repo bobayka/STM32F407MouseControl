@@ -10,8 +10,8 @@
       <TargetName>Mpu_9250_MouseControl_STMF407</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pArmCC>5060528::V5.06 update 5 (build 528)::ARMCC</pArmCC>
-      <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
+      <pArmCC>5060750::V5.06 update 6 (build 750)::ARMCC</pArmCC>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -135,7 +135,7 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4100</DriverSelection>
+            <DriverSelection>4101</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>STLink\ST-LINKIII-KEIL_SWO.dll</Flash2>
@@ -185,6 +185,7 @@
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>2</RvdsVP>
+            <RvdsMve>0</RvdsMve>
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
@@ -325,6 +326,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
             <v6LangP>3</v6LangP>
@@ -575,6 +577,31 @@
               <FileName>Reorientation.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\Reorientation.c</FilePath>
+            </File>
+            <File>
+              <FileName>AccelAngle.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\AccelAngle.c</FilePath>
+            </File>
+            <File>
+              <FileName>KalmanFilter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\KalmanFilter.c</FilePath>
+            </File>
+            <File>
+              <FileName>complimentaryfilter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\complimentaryfilter.c</FilePath>
+            </File>
+            <File>
+              <FileName>Heading.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Heading.c</FilePath>
+            </File>
+            <File>
+              <FileName>MouseControl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\MouseControl.c</FilePath>
             </File>
           </Files>
         </Group>

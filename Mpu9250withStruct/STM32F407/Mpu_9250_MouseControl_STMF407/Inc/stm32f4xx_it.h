@@ -58,16 +58,9 @@
 float convertAccData(int16_t acc);
 float convertGyroData(int16_t gyro);
 float getLength(float ax, float ay, float az);
-void getMagnetAngles(void);
-void Heading(float z_angle,float x_angle);
-//static uint8_t* Converting (float value);
-static uint8_t* Converting (int value);
 float convertTempData(int16_t temp);
 float convertMagnetData(uint16_t magn);
    
-static void GetPointerData(uint8_t* pbuf);
-static void MouseControl(uint8_t* mbuf, uint8_t angleMax, float coefX, float coefY, int16_t sensLEFT, int16_t sensRIGHT );
-static void Reorientation( float* offset_X_Angle,float* offset_Z_Angle);
 void NMI_Handler(void);
 void HardFault_Handler(void);
 void MemManage_Handler(void);
