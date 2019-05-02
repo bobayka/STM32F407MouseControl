@@ -1,4 +1,5 @@
 mpu_9250_mousecontrol_stmf407\reorientation.o: ..\Src\Reorientation.c
+mpu_9250_mousecontrol_stmf407\reorientation.o: ../Inc/Reorientation.h
 mpu_9250_mousecontrol_stmf407\reorientation.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 mpu_9250_mousecontrol_stmf407\reorientation.o: ../Inc/stm32f4xx_hal_conf.h
 mpu_9250_mousecontrol_stmf407\reorientation.o: ../Inc/main.h
@@ -35,4 +36,3 @@ mpu_9250_mousecontrol_stmf407\reorientation.o: ../Drivers/STM32F4xx_HAL_Driver/I
 mpu_9250_mousecontrol_stmf407\reorientation.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
 mpu_9250_mousecontrol_stmf407\reorientation.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 mpu_9250_mousecontrol_stmf407\reorientation.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
-mpu_9250_mousecontrol_stmf407\reorientation.o: ../Inc/Reorientation.h

@@ -69,20 +69,46 @@
 /* USER CODE BEGIN Private defines */
 #define Pi 3.14159265358979323846f
 
-#define q 	1.0f
-//#define R   50.0f//15
-#define F 	1.0f
-#define H   1.0f
+
 
 //#define ALPHA  0.9f//0,96
 #define dt      0.005f
+
+
+struct Accel
+{
+  float x,y,z;
+};
+struct Gyro{
+  float x,y,z;
+};
+struct Magnet{
+  float x,y,z;
+};
+struct Finish{
+    struct Accel accelData;
+    struct Gyro gyroData;
+    struct Magnet magnData;
+};
+
+//-------------------------------------------
+struct Rotate{
+  float x,y,z;
+};
+struct AccelAngle{
+    struct Rotate rotate;
+};
+struct FinishAngle{
+	struct Rotate rotate;
+};
+
+extern void _Error_Handler(char *file, int line);
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
  extern "C" {
 #endif
-void _Error_Handler(char *, int);
-
+     
 #define Error_Handler() _Error_Handler(__FILE__, __LINE__)
 #ifdef __cplusplus
 }

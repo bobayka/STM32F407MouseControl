@@ -38,7 +38,12 @@ mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/In
 mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Inc/stm32f4xx_it.h
 mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Inc/MPU6050.h
 mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Inc/Reorientation.h
-mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Src/Magnitometer_Calibration.h
+mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Inc/Magnitometer_Calibration.h
+mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Inc/AccelAngle.h
+mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Inc/KalmanFilter.h
+mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Inc/complimentaryfilter.h
+mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Inc/Heading.h
+mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Inc/MouseControl.h
 mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Inc/usb_device.h
 mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
 mpu_9250_mousecontrol_stmf407\stm32f4xx_it.o: ../Inc/usbd_conf.h

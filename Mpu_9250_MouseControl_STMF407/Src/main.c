@@ -61,12 +61,11 @@ I2C_HandleTypeDef hi2c1;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
-
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-MPU6050_GYROResult    GyroData;
-MPU6050_ACCResult     AccData;
-MPU6050_MAGNETResult  MagnetData;
+MPU6050_GYROResult    IntGyroData;
+MPU6050_ACCResult     IntAccData;
+MPU6050_MAGNETResult  IntMagnetData;
 MPU6050_StatusReg     Status;
 /* USER CODE END PV */
 

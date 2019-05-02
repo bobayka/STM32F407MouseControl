@@ -9,11 +9,11 @@ HAL_StatusTypeDef GetRawAcc(MPU6050_ACCResult *result)
 	HAL_StatusTypeDef statResult = I2C_BufferRead(MPU6050_DEFAULT_ADDRESS,
 			I2C1_Buffer_Rx, MPU6050_RA_ACCEL_XOUT_H, 8);
 
-	result->Accelerometr_X = (((int16_t) I2C1_Buffer_Rx[0]) << 8)
+	result->Accel_X = (((int16_t) I2C1_Buffer_Rx[0]) << 8)
 			| I2C1_Buffer_Rx[1];
-	result->Accelerometr_Y = (((int16_t) I2C1_Buffer_Rx[2]) << 8)
+	result->Accel_Y = (((int16_t) I2C1_Buffer_Rx[2]) << 8)
 			| I2C1_Buffer_Rx[3];
-	result->Accelerometr_Z = (((int16_t) I2C1_Buffer_Rx[4]) << 8)
+	result->Accel_Z = (((int16_t) I2C1_Buffer_Rx[4]) << 8)
 			| I2C1_Buffer_Rx[5];
   result->Temperature = (int16_t)(((int16_t) I2C1_Buffer_Rx[6]) << 8)
 			| I2C1_Buffer_Rx[7];
@@ -39,11 +39,11 @@ HAL_StatusTypeDef GetRawGyro(MPU6050_GYROResult *result) {
 	HAL_StatusTypeDef statResult = I2C_BufferRead(MPU6050_DEFAULT_ADDRESS,
 			I2C1_Buffer_Rx, MPU6050_RA_GYRO_XOUT_H, 6);
 
-	result->Gyroscope_X = (((int16_t) I2C1_Buffer_Rx[0]) << 8)
+	result->Gyro_X = (((int16_t) I2C1_Buffer_Rx[0]) << 8)
 			| I2C1_Buffer_Rx[1];
-	result->Gyroscope_Y = (((int16_t) I2C1_Buffer_Rx[2]) << 8)
+	result->Gyro_Y = (((int16_t) I2C1_Buffer_Rx[2]) << 8)
 			| I2C1_Buffer_Rx[3];
-	result->Gyroscope_Z = (((int16_t) I2C1_Buffer_Rx[4]) << 8)
+	result->Gyro_Z = (((int16_t) I2C1_Buffer_Rx[4]) << 8)
 			| I2C1_Buffer_Rx[5];
 	return statResult;
 }
@@ -55,11 +55,11 @@ HAL_StatusTypeDef GetRawMagnet(MPU6050_MAGNETResult *result)
 	HAL_StatusTypeDef statResult = I2C_BufferRead(AK8963_I2C_ADDR,
 			I2C1_Buffer_Rx, AK8963_HXL, 6);
 
-	result->Magnetometer_X = (((int16_t) I2C1_Buffer_Rx[1]) << 8)
+	result->Magnet_X = (((int16_t) I2C1_Buffer_Rx[1]) << 8)
 			| I2C1_Buffer_Rx[0];
-	result->Magnetometer_Y = (((int16_t) I2C1_Buffer_Rx[3]) << 8)
+	result->Magnet_Y = (((int16_t) I2C1_Buffer_Rx[3]) << 8)
 			| I2C1_Buffer_Rx[2];
-	result->Magnetometer_Z = (((int16_t) I2C1_Buffer_Rx[5]) << 8)
+	result->Magnet_Z = (((int16_t) I2C1_Buffer_Rx[5]) << 8)
 			| I2C1_Buffer_Rx[4];
 	return statResult;
 }
