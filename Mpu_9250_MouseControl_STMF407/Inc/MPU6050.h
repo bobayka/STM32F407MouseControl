@@ -378,25 +378,25 @@ extern I2C_HandleTypeDef hi2c1;
     #define AK8963_Status_1  0x02
 
 typedef struct {
-	int16_t Gyroscope_X; /*!< Gyroscope value X axis */
-	int16_t Gyroscope_Y; /*!< Gyroscope value Y axis */
-	int16_t Gyroscope_Z; /*!< Gyroscope value Z axis */
+	int16_t Gyro_X; /*!< Gyroscope value X axis */
+	int16_t Gyro_Y; /*!< Gyroscope value Y axis */
+	int16_t Gyro_Z; /*!< Gyroscope value Z axis */
 
 	int16_t Temperature; /*!< Temperature in degrees */
 } MPU6050_GYROResult;
 
 typedef struct {
-	int16_t Accelerometr_X; /*!< Accelerometr value X axis */
-	int16_t Accelerometr_Y; /*!< Accelerometr value Y axis */
-	int16_t Accelerometr_Z; /*!< Accelerometr value Z axis */
+	int16_t Accel_X; /*!< Accelerometr value X axis */
+	int16_t Accel_Y; /*!< Accelerometr value Y axis */
+	int16_t Accel_Z; /*!< Accelerometr value Z axis */
 
 	float Temperature; /*!< Temperature in degrees */
 } MPU6050_ACCResult;
 
 typedef struct{
-  int16_t Magnetometer_X; /*!< Magnetometer value X axis */
-	int16_t Magnetometer_Y; /*!< Magnetometer value Y axis */
-	int16_t Magnetometer_Z; /*!< Magnetometer value Z axis */
+  int16_t Magnet_X; /*!< Magnetometer value X axis */
+	int16_t Magnet_Y; /*!< Magnetometer value Y axis */
+	int16_t Magnet_Z; /*!< Magnetometer value Z axis */
 } MPU6050_MAGNETResult;
 
 typedef struct{
@@ -407,21 +407,13 @@ typedef struct{
 
 typedef struct{
   int8_t Data_Ready; 
-
 } MPU6050_StatusReg;
 
-typedef struct  {
-    
-		float state ,covariance;
-		
-}KalmanFilter;
 
-float get_X_Rotation(void);
-float get_Y_Rotation(void);
-float get_Z_Rotation(void);
-void KalmanFilterSimple1D(float data,float* state,float* covariance, int r); //r - ковариация шума измерений
-void Gyro_result(float* gyro_X_Angle,float* gyro_Y_Angle,float* gyro_Z_Angle);
-void Final(void);
+
+
+//void Gyro_result(float* gyro_X_Angle,float* gyro_Y_Angle,float* gyro_Z_Angle);
+
 
 HAL_StatusTypeDef I2C_BufferRead(uint8_t slaveAddr, uint8_t* pBuffer,
 		uint8_t readAddr, uint16_t NumByteToRead);

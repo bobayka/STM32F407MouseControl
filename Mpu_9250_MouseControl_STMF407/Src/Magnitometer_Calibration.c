@@ -10,67 +10,70 @@ https://www.st.com/content/ccc/resource/technical/document/application_note/e6/f
 #include "stm32f4xx.h"
 #include "Magnitometer_Calibration.h"  
 
-#define x 0
-#define y 1
-#define z 2
+
+#define X 0
+#define Y 1
+#define Z 2
 float data_offs_max[3]={-50 ,0 ,-50};
 float data_offs_min[3]={0};
 int cnt=0;
 float xmoc=0,ymoc=0,zmoc=0;//раскоментить,если используем данную функцию
 float kx = 1, ky = 1, kz = 1;
 
-void Magnitometer_Calibration (float* Mx, float* My, float* Mz)  {
+void Magnitometer_Calibration (struct Magnet*  magndata )  {
     static float max=0,min=0;
-    float mx = *Mx, my = *My, mz = *Mz;
+    float mx = magndata->x; 
+		float my = magndata->y;
+		float mz = magndata->z;
     if (cnt < 3)
         cnt++;
     else if(cnt<5000){//жду минуту чтобы откалибровать акселлерометр
 
       ++cnt;
       
-      if(mx>data_offs_max[x])
-          data_offs_max[x]=mx;
+      if(mx>data_offs_max[X])
+          data_offs_max[X]=mx;
       
-      if(my>data_offs_max[y])
-          data_offs_max[y]=my;
+      if(my>data_offs_max[Y])
+          data_offs_max[Y]=my;
       
-      if(mz>data_offs_max[z])
-          data_offs_max[z]=mz;
+      if(mz>data_offs_max[Z])
+          data_offs_max[Z]=mz;
       
-      if(mx<data_offs_min[x])
-          data_offs_min[x]=mx;
+      if(mx<data_offs_min[X])
+          data_offs_min[X]=mx;
       
-      if(my<data_offs_min[y])
-          data_offs_min[y]=my;
+      if(my<data_offs_min[Y])
+          data_offs_min[Y]=my;
       
-      if(mz<data_offs_min[z])
-          data_offs_min[z]=mz;
+      if(mz<data_offs_min[Z])
+          data_offs_min[Z]=mz;
             
       }
       else if(cnt==5000){
         cnt++;
 
-        xmoc = (data_offs_min[x]-data_offs_max[x])/2-data_offs_min[x];
-        ymoc = (data_offs_min[y]-data_offs_max[y])/2-data_offs_min[y];
-        zmoc = (data_offs_min[z]-data_offs_max[z])/2-data_offs_min[z];
+        xmoc = (data_offs_min[X]-data_offs_max[X])/2-data_offs_min[X];
+        ymoc = (data_offs_min[Y]-data_offs_max[Y])/2-data_offs_min[Y];
+        zmoc = (data_offs_min[Z]-data_offs_max[Z])/2-data_offs_min[Z];
         
-        max=data_offs_max[x];
-        if(data_offs_max[y]>max)
-          max=data_offs_max[y];
-        if(data_offs_max[z]>max)
-          max=data_offs_max[z];
+        max=data_offs_max[X];
+        if(data_offs_max[Y]>max)
+          max=data_offs_max[Y];
+        if(data_offs_max[Z]>max)
+          max=data_offs_max[Z];
         
-        min=data_offs_min[x];              
-        if(data_offs_min[y]<min)
-          min=data_offs_min[y];
-        if(data_offs_min[z]<min)
-          min=data_offs_min[z];
+        min=data_offs_min[X];              
+        if(data_offs_min[Y]<min)
+          min=data_offs_min[Y];
+        if(data_offs_min[Z]<min)
+          min=data_offs_min[Z];
         
-        kx=(max-min)/(data_offs_max[x]-data_offs_min[x]);
-        ky=(max-min)/(data_offs_max[y]-data_offs_min[y]);
-        kz=(max-min)/(data_offs_max[z]-data_offs_min[z]);
+        kx=(max-min)/(data_offs_max[X]-data_offs_min[X]);
+        ky=(max-min)/(data_offs_max[Y]-data_offs_min[Y]);
+        kz=(max-min)/(data_offs_max[Z]-data_offs_min[Z]);
       }
-        *Mx=kx*(mx+xmoc);
-        *My=ky*(my+ymoc);
-        *Mz=kz*(mz+zmoc);
+        magndata->x = kx*(mx+xmoc);
+        magndata->y = ky*(my+ymoc);
+        magndata->z = kz*(mz+zmoc);
       }
